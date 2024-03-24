@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+bin=./node_modules/.bin
+rm cli.js
+echo "transpile src/index.ls to cli.js"
+echo "#!/usr/bin/env node" > cli.js
+$bin/lsc -cbp --no-header src/index.ls >> cli.js
+chmod 755 cli.js
